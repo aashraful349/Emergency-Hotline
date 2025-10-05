@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <header class="mx-14 flex justify-between items-center mt-4">
+    <header class="md:mx-14 flex justify-between items-center mt-4">
         <div class="header-left flex">
             <img src="./assets/logo.png" alt="logo" class="w-[50px] h-[50px]">
             <h1 class="pl-1 text-[#006747] font-black hind-madurai">Emergency<br>Services</h1>
@@ -46,15 +46,15 @@
                 class="bg-[linear-gradient(90deg,rgba(1,49,34,1),rgba(0,103,71,1)_50%,rgba(1,50,35,1)_100%)] h-[239px] w-full flex flex-col items-center justify-center ">
                 <img class="max-w-[92px] max-h-[92px] m-4" src="./assets/logo-dark.png" alt="">
                 <div class="text-center mt-[-10px]">
-                    <h1 class="text-white hind-madurai font-bold text-[40px]">Emergency Service Directory</h1>
-                    <p class="text-white hind-madurai font-semibold text-[20px]">Government Emergency Services at Your
+                    <h1 class="text-white hind-madurai font-bold text-[20px] md:text-[40px]">Emergency Service Directory</h1>
+                    <p class="text-white hind-madurai font-semibold text-[10px] md:text-[20px]">Government Emergency Services at Your
                         Fingertip – A Project by Government of the People’s Republic of Bangladesh</p>
                 </div>
             </div>
         </section>
         <!-- service and history section -->
-        <section class="services-history-section bg-[#00a63e]/10 p-14 flex justify-between gap-4">
-            <div class="services grid grid-cols-3 gap-6">
+        <section class="services-history-section bg-[#00a63e]/10 p-14 md:flex justify-between gap-4">
+            <div class="services grid grid-cols-1 lg:grid-cols-3  gap-6">
                 <div class="service-1 p-5  max-w-[436px] max-h-[360px] bg-white rounded-2xl">
                     <div class="logos flex justify-between">
                         <img class="bg-[#ffe3e2] rounded-xl max-w-[32px] max-h-[32px] p-[5px]"
@@ -272,7 +272,7 @@
                     </div>
                 </div>
             </div>
-            <div id="history" class="bg-white w-[400px] rounded-2xl">
+            <div id="history" class="bg-white md:w-[400px] rounded-2xl mt-5 md:mt-0">
                 <div class="flex justify-between items-center p-4">
                     <p class="font-medium text-2xl"><i class="fa-solid fa-clock text-gray-400"></i> Call History</p>
                     <button id="clear-button" class="border-1 w-[114px] h-[52px]  rounded-4xl px-4 py-2 text-white bg-[#00A63E]">Clear</button>
