@@ -1,5 +1,3 @@
-let serviceInfo=[];
-
 const heartIconPressed=document.getElementsByClassName('heart-icon');
 for(const heartIcon of heartIconPressed){
     heartIcon.addEventListener('click',function(e){
@@ -8,9 +6,21 @@ for(const heartIcon of heartIconPressed){
         document.getElementById('heart-count').innerText=newHeartCount;
     })}
 
+const copyButtonPressed=document.getElementsByClassName('copy-button');
+for(const copyButton of copyButtonPressed){
+    copyButton.addEventListener('click',function(e){
+        const serviceNumber=copyButton.parentNode.parentNode.children[2].innerText;
+        navigator.clipboard.writeText(serviceNumber);
+        alert('Number copied to clipboard: '+serviceNumber);
+        const copyCount=parseInt(document.getElementById('copy-count').innerText);
+        newCopyCount=copyCount+1;
+        document.getElementById('copy-count').innerText=newCopyCount;
+    })
+}
+
 const callButtonPressed=document.getElementsByClassName('call-button');
 for(const callButton of callButtonPressed){
-    const service=callButton.parentNode.parentNode.firstElementChild.innerText;
+    const service=callButton.parentNode.parentNode.children[1].innerText;
     callButton.addEventListener('click',function(e){
         const coins=parseInt(document.getElementById('coin-count').innerText);
         if(coins>=20){
@@ -20,7 +30,6 @@ for(const callButton of callButtonPressed){
                 service:service,
                 time:new Date().toLocaleTimeString()
             }
-            serviceInfo.push(info);
             const historySection=document.getElementById('history');
             const div=document.createElement('div');
             div.innerHTML=`
