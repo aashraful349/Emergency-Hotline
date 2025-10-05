@@ -28,6 +28,7 @@ for(const callButton of callButtonPressed){
             document.getElementById('coin-count').innerText=newCoinCount;
             const info={
                 service:service,
+                number:callButton.parentNode.parentNode.children[2].innerText,
                 time:new Date().toLocaleTimeString()
             }
             const historySection=document.getElementById('history');
@@ -36,7 +37,7 @@ for(const callButton of callButtonPressed){
             <div class="call-history-list p-4 flex justify-between items-center">
                     <div>
                         <h1 id="service-name1" class="font-semibold text-[18px]">${info.service}</h1>
-                        <p id="service-number2" class="text-gray-400 text-[18px]">999</p>
+                        <p id="service-number2" class="text-gray-400 text-[18px]">${info.number}</p>
                     </div>
                     <div>
                         <p id="call-time" class="text-[18px] text-gray-400">${info.time}</p>
