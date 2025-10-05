@@ -22,16 +22,25 @@ for(const callButton of callButtonPressed){
             }
             serviceInfo.push(info);
             const historySection=document.getElementById('history');
-            historySection.appendChild(document.createElement('div')).classList.add('call-history-list','p-4','flex','justify-between','items-center');
-            const callHistoryList=historySection.lastChild;
-            callHistoryList.appendChild(document.createElement('div'));
-            callHistoryList.lastChild.appendChild(document.createElement('h1')).classList.add('font-semibold','text-[18px]');
-            callHistoryList.lastChild.firstChild.innerText=info.service;
-            callHistoryList.lastChild.appendChild(document.createElement('p')).classList.add('text-gray-400','text-[18px]');
-            callHistoryList.lastChild.lastChild.innerText='999';
-            callHistoryList.appendChild(document.createElement('div'));
-            callHistoryList.lastChild.appendChild(document.createElement('p')).classList.add('text-[18px]','text-gray-400');
-            callHistoryList.lastChild.firstChild.innerText=info.time;
+            const div=document.createElement('div');
+            div.innerHTML=`
+            <div class="call-history-list p-4 flex justify-between items-center">
+                    <div>
+                        <h1 id="service-name1" class="font-semibold text-[18px]">${info.service}</h1>
+                        <p id="service-number2" class="text-gray-400 text-[18px]">999</p>
+                    </div>
+                    <div>
+                        <p id="call-time" class="text-[18px] text-gray-400">${info.time}</p>
+                    </div>
+                </div>`
+            historySection.appendChild(div);
+            document.getElementById('clear-button').addEventListener('click',function(){
+                historySection.innerHTML=`
+                <div class="flex justify-between items-center p-4">
+                    <p class="font-medium text-2xl"><i class="fa-solid fa-clock text-gray-400"></i> Call History</p>
+                    <button id="clear-button" class="border-1 w-[114px] h-[52px]  rounded-4xl px-4 py-2 text-white bg-[#00A63E]">Clear</button>
+                </div>`;
+            });
         }
         else{
             alert('You have no coins left. Please recharge your coins.');
